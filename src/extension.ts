@@ -51,7 +51,7 @@ class DocumentSymbolProvider {
 					}
 				}
 
-				// append child or push
+				// append child or push to documentSymbols
 				let childFlag = false;
 				for(let j = headingLevel-1; j > 0; j--){
 					if(heading[j-1] !== null){

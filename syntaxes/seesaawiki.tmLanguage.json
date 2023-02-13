@@ -60,7 +60,7 @@
 				},
 				{
 					"name": "fontsize.textstyle.seesaawiki",
-					"match": "(&)(size)(\\()(\\d+)(\\))(\\{)(.*)(\\})",
+					"match": "(&)(size)(\\()(\\d+)(\\))(\\{)([^}]*)(\\})",
 					"captures": {
 						"1": { "name": "keyword.control.seesaawiki" },
 						"2": { "name": "support.variable.seesaawiki" },
@@ -74,7 +74,7 @@
 				},
 				{
 					"name": "fontcolor.textstyle.seesaawiki",
-					"match": "(&)(color)(\\()([^,]*?)(,?)(s*)([^,]*?)(\\))(\\{)(.*)(\\})",
+					"match": "(&)(color)(\\()([^,)]*?)(,?)(s*)([^,)]*?)(\\))(\\{)([^}]*)(\\})",
 					"captures": {
 						"1": { "name": "keyword.control.seesaawiki" },
 						"2": { "name": "support.variable.seesaawiki" },
@@ -90,7 +90,7 @@
 				},
 				{
 					"name": "sup.textstyle.seesaawiki",
-					"match": "(&)(sup)(\\{)(.*)(\\})",
+					"match": "(&)(sup)(\\{)([^}]*)(\\})",
 					"captures": {
 						"1": { "name": "keyword.control.seesaawiki" },
 						"2": { "name": "support.variable.seesaawiki" },
@@ -110,7 +110,7 @@
 				},
 				{
 					"name": "ruby.textstyle.seesaawiki",
-					"match": "(&)(ruby)(\\()(.*?)(\\))(\\{)(.*)(\\})",
+					"match": "(&)(ruby)(\\()([^)]*?)(\\))(\\{)([^}]*)(\\})",
 					"captures": {
 						"1": { "name": "keyword.control.seesaawiki" },
 						"2": { "name": "support.variable.seesaawiki" },
@@ -226,7 +226,7 @@
 		"fukidashi": {
 			"patterns": [{
 				"name": "fukidashi.seesaawiki",
-					"match": "(&)(fukidashi)(\\()([^,]*?)(?:(,)(s*)(right))?(\\))(\\{)(.*)(\\})",
+					"match": "(&)(fukidashi)(\\()([^,)]*?)(?:(,)(s*)(right))?(\\))(\\{)([^}]*)(\\})",
 					"captures": {
 						"1": { "name": "keyword.control.seesaawiki" },
 						"2": { "name": "support.variable.seesaawiki" },
@@ -267,7 +267,7 @@
 		},
 		"ref": {
 			"patterns": [{
-				"match": "(&|#)(ref|attach|attachref)(\\()([^,]*?)(?:(,\\s*)(\\d*%?)){0,2}(?:(,\\s*)(left|right|no_link)){0,2}(\\))(?:(\\{)(.*?)(\\}))?",
+				"match": "(&|#)(ref|attach|attachref)(\\()([^,)]*?)(?:(,\\s*)(\\d*%?)){0,2}(?:(,\\s*)(left|right|no_link)){0,2}(\\))(?:(\\{)([^}]*?)(\\}))?",
 				"captures": {
 					"1": { "name": "keyword.control.seesaawiki" },
 					"2": { "name": "support.variable.seesaawiki" },
@@ -294,7 +294,7 @@
 		},
 		"aname": {
 			"patterns": [{
-				"match": "(&)(aname)(\\()([^\\}]*)(\\))",
+				"match": "(&)(aname)(\\()([^\\)]*)(\\))",
 				"captures": {
 					"1": { "name": "keyword.control.seesaawiki" },
 					"2": { "name": "support.variable.seesaawiki" },
