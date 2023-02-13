@@ -1,0 +1,131 @@
+{
+	"&aname": {
+		"prefix": ["aname"],
+		"body": [
+			"&aname($1)$0"
+		]
+	},
+	"&size": {
+		"prefix": ["size"],
+		"body": [
+			"&size($1){${2:${TM_SELECTED_TEXT}}}$0"
+		]
+	},
+	"&color": {
+		"prefix": ["color"],
+		"body": [
+			"&color($1){${2:${TM_SELECTED_TEXT}}}$0"
+		]
+	},
+	"bold": {
+		"prefix": ["bold"],
+		"body": [
+			"''${1:${TM_SELECTED_TEXT}}''$0"
+		]
+	},
+	"underline": {
+		"prefix": ["underline"],
+		"body": [
+			"%%%${1:${TM_SELECTED_TEXT}}%%%$0"
+		]
+	},
+	"deleted": {
+		"prefix": ["deleted"],
+		"body": [
+			"%%${1:${TM_SELECTED_TEXT}}%%$0"
+		]
+	},
+	"italic": {
+		"prefix": ["italic"],
+		"body": [
+			"'''${1:${TM_SELECTED_TEXT}}'''$0"
+		]
+	},
+	"sup": {
+		"prefix": ["sup"],
+		"body": [
+			"&sup{${1:${TM_SELECTED_TEXT}}}$0"
+		]
+	},
+	"sub": {
+		"prefix": ["sub"],
+		"body": [
+			"__${1:${TM_SELECTED_TEXT}}__$0"
+		]
+	},
+	"&align": {
+		"prefix": ["align"],
+		"body": [
+			"&align(${1|left,center,right|}){${2:${TM_SELECTED_TEXT}}}$0"
+		]
+	},
+	"pre-formatted": {
+		"prefix": ["pre", "formatted"],
+		"body": [
+			"=|${1|BOX,AA,AAS|}|",
+			"${2:${TM_SELECTED_TEXT}}",
+			"||=",
+			"$0"
+		]
+	},
+	"&fukidashi": {
+		"prefix": ["fukidashi", "fukidasi"],
+		"body": [
+			"&fukidashi($1){${2:${TM_SELECTED_TEXT}}}$0"
+		]
+	},
+	"[+]-[END]": {
+		"prefix": ["folding (default closed)", "plus-end"],
+		"body": [
+			"[+]$1",
+			"${2:${TM_SELECTED_TEXT}}",
+			"[END]",
+			"$0"
+		]
+	},
+	"[-]-[END]": {
+		"prefix": ["folding (default opened)", "minus-end"],
+		"body": [
+			"[-]$1",
+			"${2:${TM_SELECTED_TEXT}}",
+			"[END]",
+			"$0"
+		]
+	},
+	"link": {
+		"prefix": ["link"],
+		"body": [
+			"[[${1:${TM_SELECTED_TEXT}}]]$0"
+		]
+	},
+	"link with link text": {
+		"prefix": ["link (with link text)"],
+		"body": [
+			"[[$1${2|>,>>,>>>|}${3:${TM_SELECTED_TEXT}}]]$0"
+		]
+	},
+	"show an image": {
+		"prefix": ["image", "ref"],
+		"body": [
+			"&ref($1)$0"
+		]
+	},
+	"attach an image": {
+		"prefix": ["attach"],
+		"body": [
+			"&attach($1)$0"
+		]
+	},
+	"attach and ref an image": {
+		"prefix": ["attachref"],
+		"body": [
+			"&attachref($1)$0"
+		]
+	},
+	"horizon": {
+		"prefix": ["horizon"],
+		"body": [
+			"----$0"
+		]
+	}
+}

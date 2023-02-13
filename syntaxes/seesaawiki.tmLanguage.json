@@ -1,0 +1,314 @@
+{
+	"scopeName": "text.seesaawiki",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Seesaa wiki",
+	"patterns": [
+		{ "include": "#textStyle" },
+		{ "include": "#comment" },
+		{ "include": "#heading" },
+		{ "include": "#link" },
+		{ "include": "#folding" },
+		{ "include": "#tableOfContents" },
+		{ "include": "#newline" },
+		{ "include": "#pre" },
+		{ "include": "#fukidashi" },
+		{ "include": "#email" },
+		{ "include": "#list" },
+		{ "include": "#ref" },
+		{ "include": "#horizon" },
+		{ "include": "#aname" },
+		{ "include": "#htmlChar" }
+	],
+	"repository": {
+		"textStyle": {
+			"patterns": [
+				{
+					"name": "markup.bold.seesaawiki",
+					"match": "('')(.*?)('')",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] },
+						"3": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "markup.italic.seesaawiki",
+					"match": "(''')(.*?)(''')",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] },
+						"3": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "markup.underline.seesaawiki",
+					"match": "(%%%)(.*?)(%%%)",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] },
+						"3": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "markup.deleted.seesaawiki",
+					"match": "(%%)(.*?)(%%)",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] },
+						"3": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "fontsize.textstyle.seesaawiki",
+					"match": "(&)(size)(\\()(\\d+)(\\))(\\{)(.*)(\\})",
+					"captures": {
+						"1": { "name": "keyword.control.seesaawiki" },
+						"2": { "name": "support.variable.seesaawiki" },
+						"3": { "name": "keyword.other" },
+						"4": { "name": "constant.numeric.seesaawiki" },
+						"5": { "name": "keyword.other" },
+						"6": { "name": "keyword.other" },
+						"7": { "patterns": [{"include": "$self"}] },
+						"8": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "fontcolor.textstyle.seesaawiki",
+					"match": "(&)(color)(\\()([^,]*?)(,?)(s*)([^,]*?)(\\))(\\{)(.*)(\\})",
+					"captures": {
+						"1": { "name": "keyword.control.seesaawiki" },
+						"2": { "name": "support.variable.seesaawiki" },
+						"3": { "name": "keyword.other" },
+						"4": { "name": "constant.other.colorcode.seesaawiki" },
+						"5": { "name": "keyword.other" },
+						"7": { "name": "constant.other.colorcode.seesaawiki" },
+						"8": { "name": "keyword.other" },
+						"9": { "name": "keyword.other" },
+						"10": { "patterns": [{"include": "$self"}] },
+						"11": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "sup.textstyle.seesaawiki",
+					"match": "(&)(sup)(\\{)(.*)(\\})",
+					"captures": {
+						"1": { "name": "keyword.control.seesaawiki" },
+						"2": { "name": "support.variable.seesaawiki" },
+						"3": { "name": "keyword.other" },
+						"4": { "patterns": [{"include": "$self"}] },
+						"5": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "sub.textstyle.seesaawiki",
+					"match": "(__)(.*)(__)",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] },
+						"3": { "name": "keyword.other" }
+					}
+				},
+				{
+					"name": "ruby.textstyle.seesaawiki",
+					"match": "(&)(ruby)(\\()(.*?)(\\))(\\{)(.*)(\\})",
+					"captures": {
+						"1": { "name": "keyword.control.seesaawiki" },
+						"2": { "name": "support.variable.seesaawiki" },
+						"3": { "name": "keyword.other" },
+						"4": { "patterns": [{"include": "$self"}] },
+						"5": { "name": "keyword.other" },
+						"6": { "name": "keyword.other" },
+						"7": { "patterns": [{"include": "$self"}] },
+						"8": { "name": "keyword.other" }
+					}
+				}
+			]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "comment.line.double-dash.seesaawiki",
+				"match": "^//.*$"
+			}]
+		},
+		"heading": {
+			"patterns": [
+				{
+					"name": "markup.heading.3.seesaawiki",
+					"match": "^(\\*)([^*].*)?$",
+					"captures": {
+						"1": {"name": "keyword.other"},
+						"2": { "patterns": [{"include": "$self"}] }
+					}
+				},
+				{
+					"name": "markup.heading.4.seesaawiki",
+					"match": "^(\\*{2})([^*].*)?$",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] }
+					}
+				},
+				{
+					"name": "markup.heading.5.seesaawiki",
+					"match": "^(\\*{3})([^*].*)?$",
+					"captures": {
+						"1": { "name": "keyword.other" },
+						"2": { "patterns": [{"include": "$self"}] }
+					}
+				}
+			]
+		},
+		"link": {
+			"patterns": [{
+				"name": "link.seesaawiki",
+				"match": "(\\[\\[)([^>]*?)(>{0,3})([^>]*?)(#\\w+)?(\\]\\])",
+				"captures": {
+					"1": { "name": "keyword.other.seesaawiki" },
+					"2": {
+						"name": "markup.underline.link.seesaawiki",
+						"patterns": [{"include": "$self"}]
+					},
+					"3": { "name": "keyword.other.seesaawiki" },
+					"4": { "name": "markup.underline.link.seesaawiki" },
+					"5": { "name": "support.variable.seesaawiki" },
+					"6": { "name": "keyword.other.seesaawiki" }
+				}
+			}]
+		},
+		"folding": {
+			"patterns": [{
+				"name": "folding.seesaawiki",
+				"begin": "^\\[(\\+|-)\\](.*)$",
+				"end": "^\\[END\\]",
+				"beginCaptures": {
+					"1": { "name": "keyword.other.seesaawiki" },
+					"2": { "name": "markup.bold.seesaawiki" }
+				},
+				"endCaptures": {
+					"0": { "name": "keyword.other.seesaawiki" }
+				},
+				"patterns": [{ "include": "$self" }]
+			}]
+		},
+		"tableOfContents": {
+			"patterns": [{
+				"match": "^(#)(contents)(?:(\\()(1|2)(\\)))?",
+				"captures": {
+					"1": { "name": "keyword.control.seesaawiki" },
+					"2": { "name": "support.variable.seesaawiki" },
+					"3": { "name": "keyword.other" },
+					"4": { "name": "constant.numeric.seesaawiki" },
+					"5": { "name": "keyword.other" }
+				}
+			}]
+		},
+		"newline": {
+			"patterns": [{
+				"match": "(~~)(~~~)*",
+				"name": "keyword.control.newline.seesaawiki"
+			}]
+		},
+		"pre": {
+			"patterns": [{
+				"begin": "^(=\\|)(BOX|AA|AAS|CC|CPP|CS|CYC|JAVA|BSH|CSH|SH|CV|PY|PERL|PL|PM|RB|JS|HTML|XHTML|XML|XSL|LUA|ERLANG|GO|LISP|R|SCALA|SQL|SWIFT|TEX|YAML|AUTO|\\(box=(?:textarea|div)\\))?(\\|)$",
+				"end": "^(\\|\\|=)$",
+				"beginCaptures": {
+					"1": { "name": "keyword.other.seesaawiki" },
+					"2": { "name": "keyword.other.seesaawiki" },
+					"3": { "name": "keyword.other.seesaawiki" }
+				},
+				"endCaptures": {
+					"1": { "name": "keyword.other.seesaawiki" }
+				},
+				"patterns": [{ "include": "markup.raw.seesaawiki" }]
+			}]
+		},
+		"fukidashi": {
+			"patterns": [{
+				"name": "fukidashi.seesaawiki",
+					"match": "(&)(fukidashi)(\\()([^,]*?)(?:(,)(s*)(right))?(\\))(\\{)(.*)(\\})",
+					"captures": {
+						"1": { "name": "keyword.control.seesaawiki" },
+						"2": { "name": "support.variable.seesaawiki" },
+						"3": { "name": "keyword.other" },
+						"4": { "name": "constant.other.seesaawiki" },
+						"5": { "name": "keyword.other" },
+						"7": { "name": "keyword.control.seesaawiki" },
+						"8": { "name": "keyword.other" },
+						"9": { "name": "keyword.other" },
+						"10": { "patterns": [{"include": "$self"}] },
+						"11": { "name": "keyword.other" }
+					}
+			}]
+		},
+		"email": {
+			"patterns": [{
+				"match": "\\w+@\\w+\\.\\w+",
+				"name": "markup.underline.link"
+			}]
+		},
+		"list": {
+			"patterns": [
+				{
+					"match": "^(\\+{1,3})([^\\+].*)?$",
+					"captures": {
+						"1": { "name": "keyword.other.seesaawiki" },
+						"2": { "patterns": [{ "include": "$self" }] }
+					}
+				},
+				{
+					"match": "^(\\-{1,3})([^\\-].*)?$",
+					"captures": {
+						"1": { "name": "keyword.other.seesaawiki" },
+						"2": { "patterns": [{ "include": "$self" }] }
+					}
+				}
+			]
+		},
+		"ref": {
+			"patterns": [{
+				"match": "(&|#)(ref|attach|attachref)(\\()([^,]*?)(?:(,\\s*)(\\d*%?)){0,2}(?:(,\\s*)(left|right|no_link)){0,2}(\\))(?:(\\{)(.*?)(\\}))?",
+				"captures": {
+					"1": { "name": "keyword.control.seesaawiki" },
+					"2": { "name": "support.variable.seesaawiki" },
+					"3": { "name": "keyword.control.seesaawiki" },
+					"4": { "name": "markup.underline.link.image.seesaawiki" },
+					"5": { "name": "keyword.control.seesaawiki" },
+					"6": { "name": "constant.numeric.seesaawiki" },
+					"7": { "name": "keyword.control.seesaawiki" },
+					"8": { "name": "keyword.control.seesaawiki" },
+					"9": { "name": "keyword.control.seesaawiki" },
+					"10": { "name": "keyword.control.seesaawiki" },
+					"12": { "name": "keyword.control.seesaawiki" }
+				}
+			}]
+		},
+		"horizon": {
+			"patterns": [{
+				"match": "^(----)$",
+				"name": "horizon.seesaawiki",
+				"captures": {
+					"1": { "name": "keyword.control.seesaawiki" }
+				}
+			}]
+		},
+		"aname": {
+			"patterns": [{
+				"match": "(&)(aname)(\\()([^\\}]*)(\\))",
+				"captures": {
+					"1": { "name": "keyword.control.seesaawiki" },
+					"2": { "name": "support.variable.seesaawiki" },
+					"3": { "name": "keyword.control.seesaawiki" },
+					"4": { "name": "constant.other.seesaawiki" },
+					"5": { "name": "keyword.control.seesaawiki" }
+				}
+			}]
+		},
+		"htmlChar": {
+			"patterns": [{
+				"match": "(&(\\w+|#\\d+|#x[\\da-fA-F]+);)",
+				"name": "constant.character.escape.seesaawiki"
+			}]
+		}
+	}
+}
