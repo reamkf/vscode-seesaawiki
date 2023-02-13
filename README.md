@@ -23,6 +23,9 @@ Download `.vsix` file from [releases](https://github.com/reamkf/vscode-seesaawik
 - `Ctrl+D` : Toggle deleted (`%%foo%%`)
 
 ## Release Notes
+### v0.0.3 - 2023/02/13
+Adjust commands and keyboard shortcuts
+
 ### v0.0.2 - 2023/02/13
 Initial release
 

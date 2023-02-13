@@ -2,7 +2,7 @@
 	"name": "vscode-seesaawiki",
 	"displayName": "vscode-seesaawiki",
 	"description": "",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.75.0"
 	},
@@ -36,32 +36,35 @@
 		"commands": [
 			{
 				"command": "vscode-seesaawiki.bold",
-				"title": "Toggle bold",
+				"title": "vscode-seesaawiki: Toggle bold",
 				"when": "editorLangId == seesaawiki"
 			},
 			{
 				"command": "vscode-seesaawiki.underline",
-				"title": "Toggle underline",
+				"title": "vscode-seesaawiki: Toggle underline",
 				"when": "editorLangId == seesaawiki"
 			},
 			{
 				"command": "vscode-seesaawiki.deleted",
-				"title": "Toggle deleted",
+				"title": "vscode-seesaawiki: Toggle deleted",
 				"when": "editorLangId == seesaawiki"
 			}
 		],
 		"keybindings": [
 			{
 				"command": "vscode-seesaawiki.bold",
-				"key": "ctrl+b"
+				"key": "ctrl+b",
+				"when": "editorLangId == seesaawiki"
 			},
 			{
 				"command": "vscode-seesaawiki.underline",
-				"key": "ctrl+u"
+				"key": "ctrl+u",
+				"when": "editorLangId == seesaawiki"
 			},
 			{
 				"command": "vscode-seesaawiki.deleted",
-				"key": "ctrl+d"
+				"key": "ctrl+d",
+				"when": "editorLangId == seesaawiki"
 			}
 		]
 	},
