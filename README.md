@@ -1,5 +1,5 @@
 # vscode-seesaawiki
-Seesaa Wiki syntax support
+Seesaa Wiki syntax support for Visual Studio Code
 
 **This extension is unofficial.**
 
