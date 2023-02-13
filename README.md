@@ -9,6 +9,9 @@ Seesaa Wiki syntax support for Visual Studio Code
 - Outline view
 - FoldingRange support for headings and `[+]~[END]` / `[-]~[END]`
 
+## Installation
+Download `.vsix` file from [releases](https://github.com/reamkf/vscode-seesaawiki/releases) and follow the instruction [here](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix).
+
 ## Usage
 1. Install the extension
 2. Create file with extension `.seesaawiki`
