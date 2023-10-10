@@ -23,6 +23,10 @@ Download `.vsix` file from [releases](https://github.com/reamkf/vscode-seesaawik
 - `Ctrl+D` : Toggle deleted (`%%foo%%`)
 
 ## Release Notes
+### v0.0.5 - 2023/10/11
+Adjusted some snippet
+Added '%' & '|' to surroundingPairs
+
 ### v0.0.4 - 2023/02/13
 Fixed regex for some syntaxes
 
