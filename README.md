@@ -1,3 +1,6 @@
+# 代わりに[Seesaa Wiki Enhancer](https://github.com/reamkf/seesaawiki-enhancer?tab=readme-ov-file)を使用してください。
+# Use [Seesaa Wiki Enhancer](https://github.com/reamkf/seesaawiki-enhancer?tab=readme-ov-file) instead.
+
 # vscode-seesaawiki
 Seesaa Wiki syntax support for Visual Studio Code
 
